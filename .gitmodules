@@ -1,0 +1,3 @@
+[submodule "buildCppRESTsdk/cpprestsdk"]
+	path = buildCppRESTsdk/cpprestsdk
+	url = https://github.com/Microsoft/cpprestsdk.git
