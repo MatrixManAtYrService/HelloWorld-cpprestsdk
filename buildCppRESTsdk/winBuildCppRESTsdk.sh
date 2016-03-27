@@ -26,4 +26,8 @@ echo "Three files should get copied below:"
 cd "$DIR"
 find `pwd`/cpprestsdk/Binaries/ -name "cpprest*" | grep -E '[0-9]\.(dll|lib|exp|pdb)$' | xargs cp -v -t $DIR/../lib/
 
+echo "If no files were copied, try opening cpprestsdk140.sln in visual studio and doing a \"rebuild solution\" and then rerunning this script"
+# Also, consider changing buildCppRESTsdk.bat so that whatever happens in VS happens there too
+
+
 cd "$ORIG"

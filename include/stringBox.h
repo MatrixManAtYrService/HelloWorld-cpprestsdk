@@ -17,7 +17,7 @@ struct StringBox
         web::json::value strObj = object.at(STRING);
         string_t str = strObj.as_string();
 
-        result.string = utility::conversions::to_string_t(str);
+        result.string = utility::conversions::to_utf8string(str);
         return result;
     }
 

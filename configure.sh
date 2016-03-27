@@ -23,7 +23,7 @@ if [[ $1 == -*[gG]* ]] ; then
 # -v (Visual Studio 2015)
 elif [[ $1 == -*[vV]* ]] ; then
     # build cpprestsdk, if it doesn't already exist
-    cd ../buildppRESTsdk/
+    cd ../buildCppRESTsdk/
     /usr/bin/env bash winBuildCppRESTsdk.sh
     cd ../build/
 
@@ -31,9 +31,9 @@ elif [[ $1 == -*[vV]* ]] ; then
     echo "configuring ./build/ for Visual Studio"
     cmake .. -G "Visual Studio 14 2015"
 
-    mkdir -p bin/Debug/
-    cp -v ../lib/cpprest*.dll bin/Debug/
-    cp -v ../lib/cpprest*.pdb bin/Debug/
+    mkdir -p Debug/
+    cp -v ../lib/cpprest*.dll Debug/
+    cp -v ../lib/cpprest*.pdb Debug/
 
 # -c (eClipse)
 # '-e' is interpreted by bash, so we can't use it here

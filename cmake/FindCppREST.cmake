@@ -22,7 +22,7 @@ IF(UNIX)
       )
 ELSE()
     FIND_PATH(CPP_REST_INCLUDE_DIR http_client.h
-        "${PROJECT_ROOT}/externalInclude/cpprest"
+        "${PROJECT_ROOT}/include/cpprest"
       )
 
     FILE(GLOB CPP_REST_LIBRARY NAMES
