@@ -31,7 +31,7 @@ find_package(CppREST REQUIRED) # populates CPP_REST_INCLUDE_DIR and CPP_REST_LIB
 if(MSVC)                        # Microsoft uses magic to handle this
     SET(LINK FLAGS "")
 else()
-    SET(LINK_FLAGS "-lboost_system -lcpprest -lssl -lcrypto")
+    SET(LINK_FLAGS "-lboost_system -lssl -lcrypto")
 endif()
 
 SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${LINK_FLAGS}" )

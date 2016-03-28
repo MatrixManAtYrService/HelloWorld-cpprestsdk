@@ -24,9 +24,15 @@ public:
 
     void handle_put(http_request message)
     {
-        message.reply(status_codes::OK);
-        ucout << message.to_string();
-
+        message.reply(status_codes::OK)
+            .wait();
+        message.extract_json()
+            .then([=](json::value value)
+        {
+            const std::string payload = (StringBox::FromJSON(value.as_object()).string);
+            std::cout << payload << std::endl;
+        })
+            .wait();
     }
 
 };

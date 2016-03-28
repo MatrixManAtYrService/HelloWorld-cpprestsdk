@@ -17,7 +17,7 @@ if [[ "$RUN" = false ]] ; then
 	exit 1
 fi
 
-declare -a requirements=("g++-4.8" "libssl-dev")
+declare -a requirements=("g++" "libssl-dev")
 for req in "${requirements[@]}" ; do
 	if ! dpkg -s "$req" &>/dev/null
 	then
@@ -36,7 +36,7 @@ git submodule update
 mkdir -p "$DIR/build.release"
 cd "$DIR/build.release"
 echo '*' > .gitignore
-CXX=g++-4.8 cmake ../cpprestsdk/Release #-DBOOST_ROOT=$DIR/boost_1_54_0 #-DCMAKE_BUILD_TYPE=Release 
+CXX=g++ cmake ../cpprestsdk/Release #-DBOOST_ROOT=$DIR/boost_1_54_0 #-DCMAKE_BUILD_TYPE=Release 
 make
 
 cp -v Binaries/lib*.so* "$DIR/../lib/"
@@ -44,6 +44,5 @@ rm "$DIR/../lib/libcpprest.so"
 ln -sv libcpprest.so.2.8 "$DIR/../lib/libcpprest.so"
 
 # Now install it
-/usr/bin/env bash "$DIR/installCppRESTsdk.sh"
 
 cd "$ORIG"
