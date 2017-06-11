@@ -1,6 +1,8 @@
 # HelloWorld-cpprestsdk
 Cross platform hello world using microsoft's cpprestsdk
 
+Caution: this repo is unmaintained.  It was created as part of evaluating cpprestsdk, but we ultimately ended up using [Simple Web Server](https://github.com/eidheim/Simple-Web-Server) instead.
+
 ## Building the project
 
 Requires Boost and CMake.  See [this page](https://github.com/MatrixManAtYrService/HelloWorld-sqlite/blob/master/dependency.md) for instructions.  Ignore the part about SQlite.
